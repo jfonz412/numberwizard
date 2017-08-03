@@ -15,7 +15,7 @@ public class NumberWizard : MonoBehaviour {
 	{
 		max = 1000;
 		min = 1;
-		guess = 500;
+		guess = Random.Range(min, max);
 		
 		print("=========================");
 		print("Welcome to Number Wizard");
@@ -25,10 +25,6 @@ public class NumberWizard : MonoBehaviour {
 		print("The lowest number you can pick is " + min);
 		
 		print("Is your number higher or lower than " + guess + "?");
-		print("Press the Up arrow for higher");
-		print("Press the Down arrow for lower");
-		print("Press enter for equals");
-		
 		max = max + 1;
 	}
 	
@@ -49,7 +45,8 @@ public class NumberWizard : MonoBehaviour {
 	}
 	
 	void NextGuess(){
-		guess = (max + min) / 2; //halfway between the max and the min
-		print("Higher or lower than " + guess + "?");
+		//guess = (max + min) / 2; //halfway between the max and the min
+		guess = Random.Range(min, max) + 1;
+		print("Is your number " + guess + "?");
 	}
 }
